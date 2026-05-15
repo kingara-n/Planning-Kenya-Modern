@@ -241,29 +241,29 @@ function MemberDialog({ m, onClose }: { m: Member; onClose: () => void }) {
         </div>
 
         {/* Info Side */}
-        <div className="relative flex-1 p-8 md:p-12 overflow-y-auto">
+        <div className="relative flex-1 p-6 md:p-12 overflow-y-auto">
           <button
             onClick={onClose}
-            className="absolute right-6 top-6 rounded-full bg-white/5 p-2 text-white/60 hover:bg-white/10 hover:text-white transition-all"
+            className="absolute right-4 top-4 md:right-6 md:top-6 rounded-full bg-white/5 p-2 text-white/60 hover:bg-white/10 hover:text-white transition-all"
           >
             <X size={20} />
           </button>
 
           <div className="h-full flex flex-col justify-center">
-            <div className="mb-8">
-              <span className="inline-block px-3 py-1 mb-4 text-[10px] uppercase tracking-[0.2em] bg-pk-gold/10 text-pk-gold rounded-full border border-pk-gold/20">
+            <div className="mb-6 md:mb-8">
+              <span className="inline-block px-3 py-1 mb-3 md:mb-4 text-[10px] uppercase tracking-[0.2em] bg-pk-gold/10 text-pk-gold rounded-full border border-pk-gold/20">
                 Staff Profile
               </span>
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white mb-2">
+              <h2 className="text-2xl md:text-4xl font-light tracking-tight text-white mb-2">
                 {m.name}
               </h2>
-              <p className="text-pk-gold/80 uppercase tracking-[0.2em] text-xs font-medium">
+              <p className="text-pk-gold/80 uppercase tracking-[0.2em] text-[10px] md:text-xs font-medium">
                 {m.role}
               </p>
             </div>
 
-            <div className="space-y-6">
-              <p className="text-lg text-white/70 font-light leading-relaxed">
+            <div className="space-y-4 md:space-y-6">
+              <p className="text-base md:text-lg text-white/70 font-light leading-relaxed">
                 {m.bio}
               </p>
               

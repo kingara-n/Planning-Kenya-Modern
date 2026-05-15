@@ -1,45 +1,46 @@
-import React from "react";
+import heroImg from "@/assets/hero-nairobi.jpg";
 import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/assets/images/2024/Planning Hero 1.jpg"
-          alt="Planning Kenya Hero"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background" />
-      </div>
+    <section className="relative h-screen w-full overflow-hidden">
+      <img
+        src={heroImg}
+        alt="Nairobi skyline at golden hour"
+        width={1920}
+        height={1080}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/70" />
 
-      <div className="relative z-10 px-6 md:px-16 w-full max-w-7xl mx-auto text-center">
-        <Reveal>
-          <h1
-            className="text-white font-extralight leading-[1.05] tracking-tight mb-8"
-            style={{ fontWeight: 200, fontSize: "clamp(3.5rem, 10vw, 10rem)" }}
-          >
-            Planning Kenya
-          </h1>
-        </Reveal>
+      <Reveal delay={100} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <h1 
+          className="text-white font-thin leading-none text-center px-4"
+          style={{ fontSize: "clamp(3.5rem, 15vw, 16rem)", fontWeight: 200, letterSpacing: "-0.02em" }}
+        >
+          Planning Kenya
+        </h1>
+      </Reveal>
 
-        <Reveal delay={150}>
-          <p className="text-white/80 text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-            Four decades of design \u2014 from a small Nairobi balcony in 1978
-            <br className="hidden md:block" />
-            to landmarks defining the Kenyan horizon.
-          </p>
-        </Reveal>
+      <Reveal delay={300} y={20} className="absolute bottom-12 left-8 md:left-12 max-w-sm">
+        <p className="text-white/85 text-sm font-light leading-relaxed">
+          Four decades of design — from a small Nairobi balcony in 1978 to landmarks defining the Kenyan horizon.
+        </p>
+      </Reveal>
 
-        <Reveal delay={300}>
-          <div className="mt-16">
-            <div className="h-12 w-12 rounded-full border border-white/20 flex items-center justify-center mx-auto animate-bounce">
-              <span className="text-white text-xl">\u2193</span>
-            </div>
-          </div>
-        </Reveal>
-      </div>
+      <button
+        onClick={(e) => {
+          const el = e.currentTarget;
+          el.classList.remove("pk-flash");
+          void el.offsetWidth;
+          el.classList.add("pk-flash");
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+        }}
+        aria-label="Scroll down"
+        className="pk-bounce absolute bottom-10 left-1/2 -translate-x-1/2 h-12 w-12 rounded-full border border-white/70 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.25)]"
+      >
+        <span className="text-xl leading-none">↓</span>
+      </button>
     </section>
   );
 }

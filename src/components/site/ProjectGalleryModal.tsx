@@ -77,22 +77,22 @@ export function ProjectGalleryModal({ images, title, isOpen, onClose }: Props) {
                   {/* Prev Button - Bottom Left */}
                   <button
                     onClick={() => handleNav(-1)}
-                    className="pk-glass-hover flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/5 text-[11px] uppercase tracking-[0.3em] text-white/60 hover:text-white transition-all group backdrop-blur-md"
+                    className="pk-glass-hover flex items-center gap-2 px-4 md:px-8 py-3 md:py-4 rounded-full border border-white/10 bg-white/5 text-[11px] uppercase tracking-[0.3em] text-white/60 hover:text-white transition-all group backdrop-blur-md"
                   >
                     <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                    Prev
+                    <span className="hidden sm:inline">Prev</span>
                   </button>
 
                   {/* Pagination Dots - Center Bottom */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 md:gap-3 mx-2 overflow-x-auto no-scrollbar max-w-[40%] md:max-w-none">
                     {images.map((_, i) => (
                       <button
                         key={i}
                         onClick={() => !animating && setIndex(i)}
-                        className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                        className={`h-1 rounded-full transition-all duration-500 ease-out shrink-0 ${
                           i === index 
-                            ? "bg-white w-8 shadow-[0_0_15px_rgba(255,255,255,0.6)]" 
-                            : "bg-white/20 w-1.5 hover:bg-white/40"
+                            ? "bg-white w-6 md:w-8 shadow-[0_0_15px_rgba(255,255,255,0.6)]" 
+                            : "bg-white/20 w-1 md:w-1.5 hover:bg-white/40"
                         }`}
                         aria-label={`Go to image ${i + 1}`}
                       />
@@ -101,10 +101,10 @@ export function ProjectGalleryModal({ images, title, isOpen, onClose }: Props) {
 
                   {/* Next Button - Bottom Right */}
                   <button
-                    onClick={() => handleNav(1)}
-                    className="pk-glass-hover flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/5 text-[11px] uppercase tracking-[0.3em] text-white/60 hover:text-white transition-all group backdrop-blur-md"
+                    onClick={handleNav(1)}
+                    className="pk-glass-hover flex items-center gap-2 px-4 md:px-8 py-3 md:py-4 rounded-full border border-white/10 bg-white/5 text-[11px] uppercase tracking-[0.3em] text-white/60 hover:text-white transition-all group backdrop-blur-md"
                   >
-                    Next
+                    <span className="hidden sm:inline">Next</span>
                     <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
