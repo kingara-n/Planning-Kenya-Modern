@@ -128,7 +128,7 @@ function Page() {
                   className="pk-glass-hover inline-flex items-center gap-3 border border-white/30 rounded-full px-5 py-2.5 text-[11px] tracking-[0.25em] uppercase font-light text-white/85 hover:text-white"
                 >
                   <span>Key Facts</span>
-                  <span aria-hidden>↓</span>
+                  <span>↓</span>
                 </a>
               </div>
             </Reveal>
@@ -148,7 +148,7 @@ function Page() {
               className="pk-glass-hover inline-flex items-center gap-3 border border-white/30 rounded-full px-5 py-2.5 text-[11px] tracking-[0.25em] uppercase font-light text-white/85 hover:text-white"
             >
               <span>Key Facts</span>
-              <span aria-hidden>↓</span>
+              <span>↓</span>
             </a>
           </div>
         </Reveal>
